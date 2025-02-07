@@ -1,14 +1,13 @@
 describe('API Test Challenge', () => {
-  const endpoint = 'https://api.openweathermap.org/data/2.5/weather';
-  const appId = 'd5510b12865fd2969c5851d3628edab6';
+  
+  const { endpoint1, endpoint2 , appId, lat, lon } = require('../fixtures/data1');
 
   it('Solicitar temperatura y ciudad', () => {
-    const lat = '-31.41';
-    const lon = '-64.18';
+   
 
     cy.request({
       method: 'GET',
-      url: `${endpoint}?lat=${lat}&lon=${lon}&appid=${appId}`,
+      url: `${endpoint1}?lat=${lat}&lon=${lon}&appid=${appId}`,
     }).then((response) => {
       expect(response.status).to.eq(200); // Verifica que el código de estado sea 200
       cy.log(JSON.stringify(response.body)); // Muestra el cuerpo de la respuesta en logs
@@ -33,7 +32,7 @@ describe('API Test Challenge', () => {
 
       cy.request({
         method: 'POST',
-        url: 'https://jsonplaceholder.typicode.com/posts',
+        url: endpoint2,
         body: postData,  // Enviamos los datos
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
