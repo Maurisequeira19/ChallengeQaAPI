@@ -1,0 +1,14 @@
+{
+  "name": "prueba_challenge_api",
+  "version": "1.0.0",
+  "description": "Challenge Inapp Api",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open --e2e -b chrome"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.0.2"
+  }
+}
