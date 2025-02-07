@@ -130,3 +130,4 @@ dist
 .pnp.*
 
 info.txt
+package-lock.json
